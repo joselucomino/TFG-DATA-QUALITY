@@ -1,0 +1,185 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "idArea",
+    "newColumnName": "id_area",
+    "description": "Rename column idArea to id_area"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "idCapitulo",
+    "newColumnName": "id_capitulo",
+    "description": "Rename column idCapitulo to id_capitulo"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "idOrgano",
+    "newColumnName": "id_organo",
+    "description": "Rename column idOrgano to id_organo"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "creditoInicial",
+    "newColumnName": "credito_inicial",
+    "description": "Rename column creditoInicial to credito_inicial"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "creditoModificacion",
+    "newColumnName": "credito_modificacion",
+    "description": "Rename column creditoModificacion to credito_modificacion"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "creditoDefinitivo",
+    "newColumnName": "credito_definitivo",
+    "description": "Rename column creditoDefinitivo to credito_definitivo"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "gastoComprometido",
+    "newColumnName": "gasto_comprometido",
+    "description": "Rename column gastoComprometido to gasto_comprometido"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "obligacionNeta",
+    "newColumnName": "obligacion_neta",
+    "description": "Rename column obligacionNeta to obligacion_neta"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "pagoNeto",
+    "newColumnName": "pago_neto",
+    "description": "Rename column pagoNeto to pago_neto"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "obligacionPendientePago",
+    "newColumnName": "obligacion_pendiente_pago",
+    "description": "Rename column obligacionPendientePago to obligacion_pendiente_pago"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "remanenteDeCredito",
+    "newColumnName": "remanente_credito",
+    "description": "Rename column remanenteDeCredito to remanente_credito"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "credito_inicial",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_credito_inicial",
+    "columnInsertIndex": 9,
+    "description": "Create column unidades_credito_inicial at index 9 based on column credito_inicial using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "credito_modificacion",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_credito_modificacion",
+    "columnInsertIndex": 11,
+    "description": "Create column unidades_credito_modificacion at index 11 based on column credito_modificacion using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "credito_definitivo",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_credito_definitivo",
+    "columnInsertIndex": 13,
+    "description": "Create column unidades_credito_definitivo at index 13 based on column credito_definitivo using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "gasto_comprometido",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_gasto_comprometido",
+    "columnInsertIndex": 15,
+    "description": "Create column unidades_gasto_comprometido at index 15 based on column gasto_comprometido using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "obligacion_neta",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_obligacion_neta",
+    "columnInsertIndex": 17,
+    "description": "Create column unidades_obligacion_neta at index 17 based on column obligacion_neta using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "pago_neto",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_pago_neto",
+    "columnInsertIndex": 19,
+    "description": "Create column unidades_pago_neto at index 19 based on column pago_neto using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "obligacion_pendiente_pago",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_obligacion_pendiente_pago",
+    "columnInsertIndex": 21,
+    "description": "Create column unidades_obligacion_pendiente_pago at index 21 based on column obligacion_pendiente_pago using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "remanente_credito",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_remanente_credito",
+    "columnInsertIndex": 23,
+    "description": "Create column unidades_remanente_credito at index 23 based on column remanente_credito using expression grel:\"euros\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "expression": "grel:substring(value,0,4)+ \"-\" + substring(value,4,6) + \"-\" + substring(value,6,8)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column fecha using expression grel:substring(value,0,4)+ \"-\" + substring(value,4,6) + \"-\" + substring(value,6,8)"
+  }
+]
