@@ -1,0 +1,211 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "idCapitulo",
+    "newColumnName": "id_capitulo",
+    "description": "Rename column idCapitulo to id_capitulo"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "previsionInicial",
+    "newColumnName": "prevision_inicial",
+    "description": "Rename column previsionInicial to prevision_inicial"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "previsionModificacion",
+    "newColumnName": "prevision_modificacion",
+    "description": "Rename column previsionModificacion to prevision_modificacion"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "previsionDefinitivo",
+    "newColumnName": "prevision_definitivo",
+    "description": "Rename column previsionDefinitivo to prevision_definitivo"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "derechosReconocidos",
+    "newColumnName": "derechos_reconocidos",
+    "description": "Rename column derechosReconocidos to derechos_reconocidos"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "derechosAnuladosYDevoluciones",
+    "newColumnName": "derechos_anulados_devoluciones",
+    "description": "Rename column derechosAnuladosYDevoluciones to derechos_anulados_devoluciones"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "derechosCancelados",
+    "newColumnName": "derechos_cancelados",
+    "description": "Rename column derechosCancelados to derechos_cancelados"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "derechosReconocidosNetos",
+    "newColumnName": "derechos_reconocidos_netos",
+    "description": "Rename column derechosReconocidosNetos to derechos_reconocidos_netos"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "recaudacionNeta",
+    "newColumnName": "recaudacion_neta",
+    "description": "Rename column recaudacionNeta to recaudacion_neta"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "derechosPendientesCobro",
+    "newColumnName": "derechos_pendientes_cobro",
+    "description": "Rename column derechosPendientesCobro to derechos_pendientes_cobro"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "excesoDefectoPrevision",
+    "newColumnName": "exceso_defecto_prevision",
+    "description": "Rename column excesoDefectoPrevision to exceso_defecto_prevision"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "prevision_inicial",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_prevision_inicial",
+    "columnInsertIndex": 5,
+    "description": "Create column unidades_prevision_inicial at index 5 based on column prevision_inicial using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "prevision_modificacion",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_prevision_modificacion",
+    "columnInsertIndex": 7,
+    "description": "Create column unidades_prevision_modificacion at index 7 based on column prevision_modificacion using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "prevision_definitivo",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_prevision_definitivo",
+    "columnInsertIndex": 9,
+    "description": "Create column unidades_prevision_definitivo at index 9 based on column prevision_definitivo using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "derechos_reconocidos",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_derechos_reconocidos",
+    "columnInsertIndex": 11,
+    "description": "Create column unidades_derechos_reconocidos at index 11 based on column derechos_reconocidos using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "derechos_anulados_devoluciones",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_derechos_anulados_devoluciones",
+    "columnInsertIndex": 13,
+    "description": "Create column unidades_derechos_anulados_devoluciones at index 13 based on column derechos_anulados_devoluciones using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "derechos_cancelados",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_derechos_cancelados",
+    "columnInsertIndex": 15,
+    "description": "Create column unidades_derechos_cancelados at index 15 based on column derechos_cancelados using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "derechos_reconocidos_netos",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_derechos_reconocidos_netos",
+    "columnInsertIndex": 17,
+    "description": "Create column unidades_derechos_reconocidos_netos at index 17 based on column derechos_reconocidos_netos using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "recaudacion_neta",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_recaudacion_neta",
+    "columnInsertIndex": 19,
+    "description": "Create column unidades_recaudacion_neta at index 19 based on column recaudacion_neta using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "derechos_pendientes_cobro",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_derechos_pendientes_cobro",
+    "columnInsertIndex": 21,
+    "description": "Create column unidades_derechos_pendientes_cobro at index 21 based on column derechos_pendientes_cobro using expression grel:\"euros\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "exceso_defecto_prevision",
+    "expression": "grel:\"euros\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidades_exceso_defecto_prevision",
+    "columnInsertIndex": 23,
+    "description": "Create column unidades_exceso_defecto_prevision at index 23 based on column exceso_defecto_prevision using expression grel:\"euros\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "expression": "grel:substring(value,0,4)+ \"-\" + substring(value,4,6) + \"-\" + substring(value,6,8)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column fecha using expression grel:substring(value,0,4)+ \"-\" + substring(value,4,6) + \"-\" + substring(value,6,8)"
+  }
+]
