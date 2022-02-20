@@ -1,0 +1,61 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "idVia",
+    "newColumnName": "id_via",
+    "description": "Rename column idVia to id_via"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "title",
+    "expression": "grel:value.split(\"\")[0]",
+    "onError": "set-to-blank",
+    "newColumnName": "tipo_via",
+    "columnInsertIndex": 3,
+    "description": "Create column tipo_via at index 3 based on column title using expression grel:value.split(\"\")[0]"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "title",
+    "expression": "grel:substring(value,indexOf(value, \" \"))",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column title using expression grel:substring(value,indexOf(value, \" \"))"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "geometry",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": " ",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column geometry by separator"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "geometry 1",
+    "newColumnName": "coordenada_x_utm",
+    "description": "Rename column geometry 1 to coordenada_x_utm"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "geometry 2",
+    "newColumnName": "coordenada_y_utm",
+    "description": "Rename column geometry 2 to coordenada_y_utm"
+  }
+]
