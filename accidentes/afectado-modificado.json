@@ -1,0 +1,30 @@
+[
+  {
+    "op": "core/column-removal",
+    "columnName": "tipoRolEnVehiculo",
+    "description": "Remove column tipoRolEnVehiculo"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "tipoDeEstadoAfectado",
+    "description": "Remove column tipoDeEstadoAfectado"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "age",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column age"
+  }
+]
