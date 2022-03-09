@@ -1,0 +1,403 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "estadoEstacion",
+    "newColumnName": "estado_estacion",
+    "description": "Rename column estadoEstacion to estado_estacion"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "tipoEquipamiento",
+    "newColumnName": "tipo_equipamiento",
+    "description": "Rename column tipoEquipamiento to tipo_equipamiento"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "bicisDisponibles",
+    "newColumnName": "bicis_disponibles",
+    "description": "Rename column bicisDisponibles to bicis_disponibles"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "anclajesDisponibles",
+    "newColumnName": "anclajes_disponibles",
+    "description": "Rename column anclajesDisponibles to anclajes_disponibles"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "lastUpdated",
+    "newColumnName": "last_updated",
+    "description": "Rename column lastUpdated to last_updated"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "geometry",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column geometry by separator"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "geometry 1",
+    "newColumnName": "longitud",
+    "description": "Rename column geometry 1 to longitud"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "geometry 2",
+    "newColumnName": "latitud",
+    "description": "Rename column geometry 2 to latitud"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "address",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "-",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column address by separator"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "address 1",
+    "expression": "grel:value.split(\"\")[0]",
+    "onError": "set-to-blank",
+    "newColumnName": "tipo_via_1",
+    "columnInsertIndex": 6,
+    "description": "Create column tipo_via_1 at index 6 based on column address 1 using expression grel:value.split(\"\")[0]"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "address 1",
+    "expression": "grel:substring(value,indexOf(value, \" \"))",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column address 1 using expression grel:substring(value,indexOf(value, \" \"))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_via_1",
+    "expression": "grel:value.replace(\"C/\",\"Calle\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column tipo_via_1 using expression grel:value.replace(\"C/\",\"Calle\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_via_1",
+    "expression": "grel:value.replace(\"Avda.\",\"Avenida\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column tipo_via_1 using expression grel:value.replace(\"Avda.\",\"Avenida\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_via_1",
+    "expression": "grel:value.replace(\"Pº\",\"Paseo\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column tipo_via_1 using expression grel:value.replace(\"Pº\",\"Paseo\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_via_1",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Plaza",
+          "PLAZA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Plaza"
+      },
+      {
+        "from": [
+          "Vía",
+          "Via"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Vía"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_via_1"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "address 2",
+    "expression": "grel:value.split(\"\")[0]",
+    "onError": "set-to-blank",
+    "newColumnName": "tipo_via_2",
+    "columnInsertIndex": 8,
+    "description": "Create column tipo_via_2 at index 8 based on column address 2 using expression grel:value.split(\"\")[0]"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_via_2",
+    "expression": "grel:value.replace(\"C/\",\"Calle\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column tipo_via_2 using expression grel:value.replace(\"C/\",\"Calle\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_via_2",
+    "expression": "grel:value.replace(\"Avda.\",\"Avenida\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column tipo_via_2 using expression grel:value.replace(\"Avda.\",\"Avenida\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_via_2",
+    "expression": "grel:value.replace(\"Pº\",\"Paseo\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column tipo_via_2 using expression grel:value.replace(\"Pº\",\"Paseo\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_via_2",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "La"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_via_2"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_via_2",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Eroski"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_via_2"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_via_2",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_via_2"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "address 2",
+    "expression": "grel:value.replace(\"Avda.\",\"Av\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column address 2 using expression grel:value.replace(\"Avda.\",\"Av\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "address 2",
+    "expression": "grel:value.replace(\"CDM\",\"CD\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column address 2 using expression grel:value.replace(\"CDM\",\"CD\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "address 2",
+    "expression": "grel:value.replace(\"Coso\",\"Co\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column address 2 using expression grel:value.replace(\"Coso\",\"Co\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "address 2",
+    "expression": "grel:value.replace(\"Eroski\",\"Er\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column address 2 using expression grel:value.replace(\"Eroski\",\"Er\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "address 2",
+    "expression": "grel:value.replace(\"Esquina\",\"Eq\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column address 2 using expression grel:value.replace(\"Esquina\",\"Eq\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "address 2",
+    "expression": "grel:value.replace(\"Vía\",\"Vi\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column address 2 using expression grel:value.replace(\"Vía\",\"Vi\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "address 2",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "  C/ Escultor Benlliure"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": " C/ Escultor Benlliure"
+      }
+    ],
+    "description": "Mass edit cells in column address 2"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "address 2",
+    "expression": "grel:substring(value,3)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column address 2 using expression grel:substring(value,3)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "icon",
+    "expression": "grel:value.substring(2)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column icon using expression grel:value.substring(2)"
+  }
+]
