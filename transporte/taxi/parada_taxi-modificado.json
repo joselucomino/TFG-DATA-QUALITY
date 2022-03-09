@@ -1,0 +1,101 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "lastUpdated",
+    "newColumnName": "last_updated",
+    "description": "Rename column lastUpdated to last_updated"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "title",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column title by separator"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "title 2",
+    "newColumnName": "numero",
+    "description": "Rename column title 2 to numero"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "title 1",
+    "expression": "grel:substring(value,indexOf(value, \" \"))",
+    "onError": "set-to-blank",
+    "newColumnName": "nombre_via",
+    "columnInsertIndex": 2,
+    "description": "Create column nombre_via at index 2 based on column title 1 using expression grel:substring(value,indexOf(value, \" \"))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "title 1",
+    "expression": "grel:value.split(\"\")[0]",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column title 1 using expression grel:value.split(\"\")[0]"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "title 1",
+    "newColumnName": "tipo_via",
+    "description": "Rename column title 1 to tipo_via"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "geometry",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column geometry by separator"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "geometry 1",
+    "newColumnName": "longitud",
+    "description": "Rename column geometry 1 to longitud"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "geometry 2",
+    "newColumnName": "latitud",
+    "description": "Rename column geometry 2 to latitud"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "icon",
+    "expression": "grel:value.substring(2)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column icon using expression grel:value.substring(2)"
+  }
+]
