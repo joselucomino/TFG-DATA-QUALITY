@@ -1,0 +1,450 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "creationDate",
+    "newColumnName": "creation_date",
+    "description": "Rename column creationDate to creation_date"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "distancia",
+    "expression": "grel:substring(value,indexOf(value, \" \"))",
+    "onError": "set-to-blank",
+    "newColumnName": "unidad_distancia",
+    "columnInsertIndex": 3,
+    "description": "Create column unidad_distancia at index 3 based on column distancia using expression grel:substring(value,indexOf(value, \" \"))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "distancia",
+    "expression": "grel:value.split(\"\")[0]",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column distancia using expression grel:value.split(\"\")[0]"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "distancia",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column distancia"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "unidad_distancia",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "m"
+      }
+    ],
+    "description": "Mass edit cells in column unidad_distancia"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "via",
+    "expression": "grel:substring(value,indexOf(value, \" \"))",
+    "onError": "set-to-blank",
+    "newColumnName": "unidad_via",
+    "columnInsertIndex": 5,
+    "description": "Create column unidad_via at index 5 based on column via using expression grel:substring(value,indexOf(value, \" \"))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "via",
+    "expression": "grel:value.split(\"\")[0]",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column via using expression grel:value.split(\"\")[0]"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "via",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "25m"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "25"
+      }
+    ],
+    "description": "Mass edit cells in column via"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "unidad_via",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          " m",
+          "m"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": " m"
+      },
+      {
+        "from": [
+          " metros",
+          " metros "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": " m"
+      }
+    ],
+    "description": "Mass edit cells in column unidad_via"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "distancia",
+    "expression": "grel:value.replace(\",\",\".\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column distancia using expression grel:value.replace(\",\",\".\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "via",
+    "expression": "grel:value.replace(\",\",\".\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column via using expression grel:value.replace(\",\",\".\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "trafico",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column trafico"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "zona",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column zona"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "direccion",
+    "expression": "grel:substring(value,indexOf(value, \" \"))",
+    "onError": "set-to-blank",
+    "newColumnName": "nombre_direccion",
+    "columnInsertIndex": 9,
+    "description": "Create column nombre_direccion at index 9 based on column direccion using expression grel:substring(value,indexOf(value, \" \"))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "direccion",
+    "expression": "grel:value.split(\"\")[0]",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column direccion using expression grel:value.split(\"\")[0]"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "direccion",
+    "expression": "grel:value.replace(\"C/\",\"Calle\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column direccion using expression grel:value.replace(\"C/\",\"Calle\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "direccion",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Calle",
+          "calle"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Calle"
+      }
+    ],
+    "description": "Mass edit cells in column direccion"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "direccion",
+    "newColumnName": "tipo_direccion",
+    "description": "Rename column direccion to tipo_direccion"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "longitud",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column longitud"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "latitud",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column latitud"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "altitud",
+    "expression": "grel:substring(value,indexOf(value, \" \"))",
+    "onError": "set-to-blank",
+    "newColumnName": "unidad_altitud",
+    "columnInsertIndex": 15,
+    "description": "Create column unidad_altitud at index 15 based on column altitud using expression grel:substring(value,indexOf(value, \" \"))"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "unidad_altitud",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          " metros"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "m"
+      }
+    ],
+    "description": "Mass edit cells in column unidad_altitud"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "unidad_altitud",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          " m"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "m"
+      }
+    ],
+    "description": "Mass edit cells in column unidad_altitud"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "altitud",
+    "expression": "grel:value.split(\"\")[0]",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column altitud using expression grel:value.split(\"\")[0]"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "altitud",
+    "expression": "grel:value.replace(\",\",\".\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column altitud using expression grel:value.replace(\",\",\".\")"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "geo",
+    "description": "Remove column geo"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "fechas",
+    "description": "Remove column fechas"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "icon",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column icon"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "alertas",
+    "description": "Remove column alertas"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "datosGrafico",
+    "description": "Remove column datosGrafico"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "observation",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column observation"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "idSparql",
+    "description": "Remove column idSparql"
+  }
+]
