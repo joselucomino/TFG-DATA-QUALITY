@@ -1,0 +1,5 @@
+id,title,tipo_equipamiento,titularidad_publica,tipo_via,nombre_via,numero_via,postal_code,portal_id,latitud,longitud,creation_date,last_updated
+29251,Electrolinera Plaza de Toros (motos),electrolineras,false,Calle, Ramón Pignatelli,102,50004,25938,41.654654065695894,-0.8903855294865146,2020-05-27T02:00:00Z,2021-03-23T08:36:49Z
+29248,Electrolinera Doctor Fleming,electrolineras,false,Calle, Doctor Fleming,1,50004,925,41.651216451448036,-0.889888969686842,2020-05-26T02:00:00Z,2021-03-23T08:36:49Z
+29252,Electrolinera P.J. Soler,electrolineras,false,Calle, Pedro Joaquín Soler,20,50001,14367,41.652025793747946,-0.8769523860440905,2020-05-27T02:00:00Z,2021-03-23T08:36:49Z
+29253,Electrolinera Ramón y Cajal,electrolineras,false,Calle, Ramón y Cajal,50,50004,22732,41.65272557390989,-0.8864611509628293,2020-05-27T02:00:00Z,2021-03-23T08:36:49Z

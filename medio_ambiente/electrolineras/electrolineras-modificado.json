@@ -1,0 +1,180 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "tipoEquipamiento",
+    "newColumnName": "tipo_equipamiento",
+    "description": "Rename column tipoEquipamiento to tipo_equipamiento"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "titularidadPublica",
+    "newColumnName": "titularidad_publica",
+    "description": "Rename column titularidadPublica to titularidad_publica"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "postalCode",
+    "newColumnName": "postal_code",
+    "description": "Rename column postalCode to postal_code"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "portalId",
+    "newColumnName": "portal_id",
+    "description": "Rename column portalId to portal_id"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "creationDate",
+    "newColumnName": "creation_date",
+    "description": "Rename column creationDate to creation_date"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "lastUpdated",
+    "newColumnName": "last_updated",
+    "description": "Rename column lastUpdated to last_updated"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "email",
+    "description": "Remove column email"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "telephone",
+    "description": "Remove column telephone"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "url",
+    "description": "Remove column url"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "openingHours",
+    "description": "Remove column openingHours"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "distritoId",
+    "description": "Remove column distritoId"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "municipioId",
+    "description": "Remove column municipioId"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "municipioTitle",
+    "description": "Remove column municipioTitle"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "provinciaId",
+    "description": "Remove column provinciaId"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "autonomiaId",
+    "description": "Remove column autonomiaId"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "paisId",
+    "description": "Remove column paisId"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "description",
+    "description": "Remove column description"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "streetAddress",
+    "expression": "grel:substring(value,indexOf(value, \" \"))",
+    "onError": "set-to-blank",
+    "newColumnName": "nombre_via",
+    "columnInsertIndex": 5,
+    "description": "Create column nombre_via at index 5 based on column streetAddress using expression grel:substring(value,indexOf(value, \" \"))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "streetAddress",
+    "expression": "grel:value.split(\"\")[0]",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column streetAddress using expression grel:value.split(\"\")[0]"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "streetAddress",
+    "newColumnName": "tipo_via",
+    "description": "Rename column streetAddress to tipo_via"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_via",
+    "expression": "grel:value.replace(\"C/\",\"Calle\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column tipo_via using expression grel:value.replace(\"C/\",\"Calle\")"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "nombre_via",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column nombre_via by separator"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "nombre_via 1",
+    "newColumnName": "nombre_via",
+    "description": "Rename column nombre_via 1 to nombre_via"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "nombre_via 2",
+    "newColumnName": "numero_via",
+    "description": "Rename column nombre_via 2 to numero_via"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "geometry",
+    "description": "Remove column geometry"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "xETRS89",
+    "description": "Remove column xETRS89"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "yETRS89",
+    "description": "Remove column yETRS89"
+  }
+]
