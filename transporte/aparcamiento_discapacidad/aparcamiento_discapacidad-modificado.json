@@ -1,0 +1,114 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "lastUpdated",
+    "newColumnName": "last_updated",
+    "description": "Rename column lastUpdated to last_updated"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "description",
+    "expression": "grel:substring(value,indexOf(value, \" \"))",
+    "onError": "set-to-blank",
+    "newColumnName": "nombre_via",
+    "columnInsertIndex": 3,
+    "description": "Create column nombre_via at index 3 based on column description using expression grel:substring(value,indexOf(value, \" \"))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "description",
+    "expression": "grel:value.split(\"\")[0]",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column description using expression grel:value.split(\"\")[0]"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "description",
+    "newColumnName": "tipo_via",
+    "description": "Rename column description to tipo_via"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "nombre_via",
+    "expression": "grel:substring(value,lastIndexOf(value, \" \"))",
+    "onError": "set-to-blank",
+    "newColumnName": "numero_via",
+    "columnInsertIndex": 4,
+    "description": "Create column numero_via at index 4 based on column nombre_via using expression grel:substring(value,lastIndexOf(value, \" \"))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "nombre_via",
+    "expression": "grel:substring(value,0,lastIndexOf(value, \",\"))",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column nombre_via using expression grel:substring(value,0,lastIndexOf(value, \",\"))"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "numero_via",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          " s/n",
+          " S/N"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "S/N"
+      }
+    ],
+    "description": "Mass edit cells in column numero_via"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "geometry",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column geometry by separator"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "geometry 1",
+    "newColumnName": "longitud",
+    "description": "Rename column geometry 1 to longitud"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "geometry 2",
+    "newColumnName": "latitud",
+    "description": "Rename column geometry 2 to latitud"
+  }
+]
