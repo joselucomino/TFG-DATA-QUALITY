@@ -1,5 +1,0 @@
-Las transformaciones realizadas en listado.csv han sido:
-
-· Se han convertido las letras mayúsculas en minúsculas, y la separación de palabras se han sustituido por el subrayado. Esto hace referencia a los encabezados, donde títulos como "creationDate" se han sustituido por "creation_date".
-
-· Se han eliminado las columnas vacías, y se han sustituido las celdas vacías por "desconocido" para cumplir con que todas las filas tengan el mismo número de columnas.
