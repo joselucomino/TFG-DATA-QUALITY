@@ -105,24 +105,6 @@
     "description": "Text transform on cells in column emplazamiento using expression grel:substring(value,lastIndexOf(value, \" \"))"
   },
   {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "fecha_baja",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [],
-        "fromBlank": true,
-        "fromError": false,
-        "to": "abierto"
-      }
-    ],
-    "description": "Mass edit cells in column fecha_baja"
-  },
-  {
     "op": "core/column-split",
     "engineConfig": {
       "facets": [],
@@ -184,23 +166,5 @@
       }
     ],
     "description": "Mass edit cells in column actividad"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "last_updated",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [],
-        "fromBlank": true,
-        "fromError": false,
-        "to": "DESCONOCIDO"
-      }
-    ],
-    "description": "Mass edit cells in column last_updated"
   }
 ]
