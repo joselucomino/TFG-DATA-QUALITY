@@ -399,5 +399,35 @@
     "repeat": false,
     "repeatCount": 10,
     "description": "Text transform on cells in column icon using expression grel:value.substring(2)"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "address 1",
+    "newColumnName": "address_1",
+    "description": "Rename column address 1 to address_1"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "address 2",
+    "newColumnName": "address_2",
+    "description": "Rename column address 2 to address_2"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "address_2",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column address_2"
   }
 ]

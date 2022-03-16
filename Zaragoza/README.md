@@ -26,4 +26,20 @@ A continuación se muestran todos los enlaces a los conjuntos de datos que se ha
 · pacientes_covid.csv: https://www.zaragoza.es/contenidos/demografia/ZBS_2020_datos210524.csv
 
 ### transporte
-· accidente.csv: 
+· accidente.csv: https://www.zaragoza.es/sede/servicio/transporte/accidentalidad-trafico/accidente.csv
+
+· afectado.csv: https://www.zaragoza.es/sede/servicio/transporte/accidentalidad-trafico/afectado.csv
+
+· tipo_vehiculo_implicado.csv: https://www.zaragoza.es/sede/servicio/transporte/accidentalidad-trafico/tipo-vehiculo-implicado.csv
+
+· aparcamiento_bicicleta.csv: https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/equipamiento/aparcamiento-bicicleta.csv
+
+· aparcamiento_personas_discapacidad.csv: https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/equipamiento/aparcamiento-personas-discapacidad.csv
+
+· aparcamiento_moto.csv: https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/equipamiento/aparcamiento-moto.csv
+
+· estacion_bicicleta.csv: https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/estacion-bicicleta.csv
+
+· parada_taxi.csv: https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/equipamiento/parada-taxi.csv
+
+· parada_tranvia.csv: https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/transporte-urbano/parada-tranvia.csv
