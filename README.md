@@ -1,4 +1,4 @@
-# TFG
+# Proceso de chequeo de la calidad de los datos abiertos publicados por ciudades españolas
 Este repositorio está relacionado con un Trabajo Fin de Grado (TFG) realizado en el contexto del Grado de Ingeniería Informática de la Escuela Técnica Superior de Ingenieros Informáticos de la Universidad Politécnica de Madrid. 
 
 En este TFG se aborda la comprobación de la calidad de varios de los conjuntos de datos disponibles en los portales de datos abiertos de varias ciudades españolas. Para ello, en el proyecto se aplicará una checklist como guía de comprobación de calidad de los datos abiertos publicados y se realizarán modificaciones sobre los datos ya publicados, con el objetivo de ofrecer recomendaciones a los proveedores de datos (generalmente, los responsables de datos abiertos de las ciudades o sus departamentos) sobre cómo publicar sus datos con mayores garantías de calidad.
