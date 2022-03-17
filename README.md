@@ -17,3 +17,5 @@ Por último, se creará un informe final de recomendaciones para publicaciones d
 
 ## Referencias
 En el siguiente enlace se encuentra información de utilidad que ha sido recopilada para la creación de la checklist: https://ciudades-abiertas.es/
+
+Corcho, Oscar, & De Pablo, Vicky. (2022). Adaptación de estructuras de conjuntos de datos para asegurar su calidad y anonimización. Informe técnico del proyecto Ciudades Abiertas (1.0). Zenodo. https://doi.org/10.5281/zenodo.5942552
