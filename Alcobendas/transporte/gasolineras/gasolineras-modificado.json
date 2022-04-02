@@ -1,0 +1,492 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "﻿Rótulo",
+    "newColumnName": "rotulo",
+    "description": "Rename column ﻿Rótulo to rotulo"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Horario",
+    "newColumnName": "horario",
+    "description": "Rename column Horario to horario"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Dirección",
+    "newColumnName": "direccion",
+    "description": "Rename column Dirección to direccion"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Código postal",
+    "newColumnName": "codigo_postal",
+    "description": "Rename column Código postal to codigo_postal"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Precio gases licuados del petroleo",
+    "newColumnName": "gases_licuados_petroleo",
+    "description": "Rename column Precio gases licuados del petroleo to gases_licuados_petroleo"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Precio gasoleo A",
+    "newColumnName": "gasoleo_A",
+    "description": "Rename column Precio gasoleo A to gasoleo_A"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Precio gasolina 95 protección",
+    "newColumnName": "gasolina_95",
+    "description": "Rename column Precio gasolina 95 protección to gasolina_95"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Precio gasolina 98",
+    "newColumnName": "gasolina_98",
+    "description": "Rename column Precio gasolina 98 to gasolina_98"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Precio nuevo gasoleo A",
+    "newColumnName": "nuevo_gasoleo_A",
+    "description": "Rename column Precio nuevo gasoleo A to nuevo_gasoleo_A"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "gases_licuados_petroleo",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column gases_licuados_petroleo"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "gasoleo_A",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column gasoleo_A"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "gasolina_95",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column gasolina_95"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "gasolina_98",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column gasolina_98"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "nuevo_gasoleo_A",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "desconocido"
+      }
+    ],
+    "description": "Mass edit cells in column nuevo_gasoleo_A"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "direccion",
+    "expression": "grel:substring(value,indexOf(value, \" \"))",
+    "onError": "set-to-blank",
+    "newColumnName": "nombre_via",
+    "columnInsertIndex": 3,
+    "description": "Create column nombre_via at index 3 based on column direccion using expression grel:substring(value,indexOf(value, \" \"))"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "nombre_via",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column nombre_via by separator"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "nombre_via 1",
+    "newColumnName": "nombre_via",
+    "description": "Rename column nombre_via 1 to nombre_via"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "nombre_via 2",
+    "newColumnName": "numero_via",
+    "description": "Rename column nombre_via 2 to numero_via"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "direccion",
+    "expression": "grel:value.split(\"\")[0]",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column direccion using expression grel:value.split(\"\")[0]"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "direccion",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CALLE"
+      }
+    ],
+    "description": "Mass edit cells in column direccion"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "direccion",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CR"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CARRETERA"
+      }
+    ],
+    "description": "Mass edit cells in column direccion"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "direccion",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CTRA."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CARRETERA"
+      }
+    ],
+    "description": "Mass edit cells in column direccion"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "direccion",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "N-I"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NACIONAL"
+      }
+    ],
+    "description": "Mass edit cells in column direccion"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "numero_via",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "S/N"
+      }
+    ],
+    "description": "Mass edit cells in column numero_via"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "numero_via",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          " "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "S/N"
+      }
+    ],
+    "description": "Mass edit cells in column numero_via"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "numero_via",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          " S.N."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "S/N"
+      }
+    ],
+    "description": "Mass edit cells in column numero_via"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "numero_via",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          " S/N"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "S/N"
+      }
+    ],
+    "description": "Mass edit cells in column numero_via"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "numero_via",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          " 12-1"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "12-1"
+      }
+    ],
+    "description": "Mass edit cells in column numero_via"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "numero_via",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          " 13/15"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "13/15"
+      }
+    ],
+    "description": "Mass edit cells in column numero_via"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "nombre_via 3",
+    "description": "Remove column nombre_via 3"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "direccion",
+    "newColumnName": "tipo_via",
+    "description": "Rename column direccion to tipo_via"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "rotulo",
+    "expression": "grel:rowIndex+1",
+    "onError": "set-to-blank",
+    "newColumnName": "id",
+    "columnInsertIndex": 1,
+    "description": "Create column id at index 1 based on column rotulo using expression grel:rowIndex+1"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "id",
+    "index": 0,
+    "description": "Move column id to position 0"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "gases_licuados_petroleo",
+    "expression": "grel:\"€/l\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidad_gases_licuados_petroleo",
+    "columnInsertIndex": 8,
+    "description": "Create column unidad_gases_licuados_petroleo at index 8 based on column gases_licuados_petroleo using expression grel:\"€/l\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "gasoleo_A",
+    "expression": "grel:\"€/l\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidad_gasoleo_A",
+    "columnInsertIndex": 10,
+    "description": "Create column unidad_gasoleo_A at index 10 based on column gasoleo_A using expression grel:\"€/l\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "gasolina_95",
+    "expression": "grel:\"€/l\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidad_gasolina_95",
+    "columnInsertIndex": 12,
+    "description": "Create column unidad_gasolina_95 at index 12 based on column gasolina_95 using expression grel:\"€/l\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "gasolina_98",
+    "expression": "grel:\"€/l\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidad_gasolina_98",
+    "columnInsertIndex": 14,
+    "description": "Create column unidad_gasolina_98 at index 14 based on column gasolina_98 using expression grel:\"€/l\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "nuevo_gasoleo_A",
+    "expression": "grel:\"€/l\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unidad_nuevo_gasoleo_A",
+    "columnInsertIndex": 16,
+    "description": "Create column unidad_nuevo_gasoleo_A at index 16 based on column nuevo_gasoleo_A using expression grel:\"€/l\""
+  }
+]

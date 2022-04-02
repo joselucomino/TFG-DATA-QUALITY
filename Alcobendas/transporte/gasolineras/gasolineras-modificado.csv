@@ -1,0 +1,40 @@
+id,rotulo,horario,tipo_via,nombre_via,numero_via,codigo_postal,gases_licuados_petroleo,unidad_gases_licuados_petroleo,gasoleo_A,unidad_gasoleo_A,gasolina_95,unidad_gasolina_95,gasolina_98,unidad_gasolina_98,nuevo_gasoleo_A,unidad_nuevo_gasoleo_A,lat,lon
+1,SHELL,L-D: 06:00-22:00,CARRETERA, M-603 KM. 14,900,28100,desconocido,€/l,1.919,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.528806,-3.651583
+2,BP EL SAPO-ALCOBENDAS,L-D: 06:00-13:59 y 14:00-22:00,AVENIDA, MONTE DE VALDELATAS,5,28100,desconocido,€/l,1.889,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.528722,-3.659667
+3,BP VALDAVIA,L-D: 24H,CALLE, MARQUES DE LA VALDAVIA (DEL),138,28100,desconocido,€/l,1.889,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.546944,-3.653944
+4,BP JUNCAL,L-D: 24H,CARRETERA, BARAJAS KM. S/N,S/N,28100,desconocido,€/l,1.889,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.534083,-3.618944
+5,GALP,L-D: 07:00-23:00,CARRETERA, ANTIGUA NACIONAL I KM. 15,5,28100,0.899,€/l,1.869,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.532806,-3.642250
+6,GALP,L-D: 24H,AVENIDA, VALDELAPARRA (DE),5,28100,desconocido,€/l,1.869,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.548306,-3.662056
+7,SHELL,L-S: 06:00-22:00; D: 09:00-17:00,AVENIDA, VALDELAPARRA,3,28100,desconocido,€/l,1.929,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.537250,-3.643194
+8,CARREFOUR,L-D: 24H,CARRETERA, A-1 KM. 14,500,28100,desconocido,€/l,1.869,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.528194,-3.649417
+9,BALLENOIL,L-D: 24H,CALLE, VALGRANDE,30,28100,desconocido,€/l,1.869,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.539583,-3.654139
+10,CEPSA,L-V: 07:00-23:00; S-D: 09:00-21:00,AVENIDA, EUROPA (C.C. LA MORALEJA),13/15,28100,desconocido,€/l,1.929,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.520111,-3.657528
+11,CEPSA,L-D: 07:00-23:00,PASEO, ALCOBENDAS (DE),10,28100,desconocido,€/l,1.869,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.527889,-3.622306
+12,PETROPRIX,L-D: 24H,AVENIDA, MARQUES DE LA VALDAVIA,132,28100,desconocido,€/l,1.859,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.546556,-3.651861
+13,REPSOL,L-D: 24H,CALLE, AVENIDA DE ESPAÑA,S/N,28100,0.959,€/l,1.859,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.546167,-3.634639
+14,REPSOL,L-D: 06:00-00:00,CARRETERA, M-603,14,28100,desconocido,€/l,1.849,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.525778,-3.654889
+15,REPSOL,L-D: 06:00-22:00,CALLE, BOULEVARD SALVADOR ALLENDE,12-1,28108,desconocido,€/l,1.849,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.537500,-3.633944
+16,REPSOL,L-S: 06:00-23:00; D: 07:00-23:00,BULEVAR, SALVADOR ALLENDE (DE),13,28108,desconocido,€/l,1.849,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.537750,-3.634389
+17,PETROPRIX,L-D: 24H,CALLE, VALGRANDE,11,28108,desconocido,€/l,1.859,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.536389,-3.649750
+18,ALCAMPO,L-D: 24H,AVENIDA, OLIMPICA,9,28108,desconocido,€/l,1.869,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.535194,-3.636806
+19,REPSOL,L-V: 06:00-22:00; S: 07:00-14:00,CALLE, FRANCISCO GERVAS,13,28108,desconocido,€/l,1.859,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.533722,-3.652250
+20,COMBUS,L-V: 08:00-19:00,CARRETERA, FUENCARRAL KM. 100,S/N,28108,desconocido,€/l,1.889,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.521944,-3.660889
+21,REPSOL,L-V: 07:00-22:00; S: 07:00-15:00 y 17:00-22:00; D: 09:00-15:00,PLAZA, MORALEJA S/N,S/N,28109,desconocido,€/l,1.879,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.515639,-3.651083
+22,CEPSA,L-D: 24H,NACIONAL, (MADRID-BURGOS) km 24,100,28700,desconocido,€/l,1.889,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.590889,-3.581778
+23,CEPSA,L-D: 24H,AVENIDA, TENERIFE (DE),14,28700,desconocido,€/l,1.829,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.559528,-3.621750
+24,REPSOL,L-D: 06:00-22:00,CALLE, REAL  (ANTIGUA N-1),120,28700,desconocido,€/l,1.845,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.552500,-3.618861
+25,REPSOL,L-D: 06:00-22:00,CALLE, AVDA TENERIFE,18,28700,desconocido,€/l,1.845,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.560250,-3.620056
+26,REPSOL,L-D: 07:00-23:00,AVENIDA, EINSTEIN,5,28700,0.959,€/l,1.839,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.544417,-3.610167
+27,REPSOL,L-D: 24H,CARRETERA, N-1,18,28700,0.959,€/l,1.839,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.545778,-3.606500
+28,BP ,L-D: 06:00-00:00,GLORIETA, ANTONIO GAUDI,S/N,28700,desconocido,€/l,1.879,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.557833,-3.612611
+29,BALLENOIL,L-D: 24H,AVENIDA, MATAPIÑONERA,20,28700,desconocido,€/l,1.879,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.545806,-3.617750
+30,BALLENOIL,L-D: 24H,AVENIDA, TENERIFE,10,28700,desconocido,€/l,1.829,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.559389,-3.622861
+31,SETOR,L-V: 06:00-23:00; S-D: 07:00-00:00,NACIONAL,  (BURGOS-MADRID) km 24,100,28700,desconocido,€/l,1.859,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.590944,-3.583417
+32,CEPSA,L-D: 24H,CARRETERA, BURGOS,S/N,28700,0.929,€/l,1.909,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.590500,-3.582583
+33,GALP,L-D: 24H,AUTOVIA, NACIONAL I KM. 26,200,28700,desconocido,€/l,1.899,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.608694,-3.579000
+34,SHELL,L-D: 06:00-00:00,CARRETERA, ANTIGUA N-I CV CAMINO REDESA KM. S/N,S/N,28700,0.929,€/l,1.879,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.565556,-3.605472
+35,SHELL,L-D: 06:00-00:00,AVENIDA, FUENTENUEVA,1,28700,desconocido,€/l,1.879,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.547750,-3.610750
+36,PETROPRIX,L-D: 24H,AVENIDA, FUENTE NUEVA,18,28700,desconocido,€/l,1.855,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.547667,-3.612472
+37,BALLENOIL,L-D: 24H,PASEO, EUROPA,22,28700,desconocido,€/l,1.879,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.545917,-3.622917
+38,HAM,L-D: 24H,AUTOVIA, NACIONAL I KM. 26,200,28700,desconocido,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.608417,-3.578833
+39,BALLENOIL,L-D: 24H,AVENIDA, PIRINEOS (DE LOS),21,28700,desconocido,€/l,1.879,€/l,desconocido,€/l,desconocido,€/l,desconocido,€/l,40.551972,-3.610083
