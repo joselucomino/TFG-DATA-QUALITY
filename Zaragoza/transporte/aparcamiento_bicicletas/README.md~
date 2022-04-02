@@ -1,4 +1,0 @@
-Las transformaciones realizadas en aparcamiento_bicicleta.csv han sido:
-
-· Se han convertido las letras mayúsculas en minúsculas, y la separación de palabras se han sustituido por el subrayado. Esto hace referencia a los encabezados, donde títulos como "lastUpdated" se han sustituido por "last_updated".
-

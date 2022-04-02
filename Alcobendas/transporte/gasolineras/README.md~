@@ -1,5 +1,0 @@
-Las transformaciones realizadas en gasolineras.csv han sido:
-
-· Se han convertido las letras mayúsculas en minúsculas, y la separación de palabras se ha sustituido por el subrayado. Esto hace referencia a los encabezados, donde títulos como "Código postal" se han sustituido por "codigo_postal".
-
-· 
