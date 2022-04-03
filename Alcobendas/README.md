@@ -5,3 +5,5 @@ A continuación se muestran todos los enlaces a los conjuntos de datos que se ha
 
 · aparcamientos.csv: https://datos.alcobendas.org/dataset/4f50ee31-0eae-4568-9d9b-401e68a862bd/resource/c17ba419-68fd-4f0e-b7ed-eb51606e9c38/download/recurso.csv
 
+### empleo
+· sepe.csv: https://datos.alcobendas.org/dataset/296094cc-d539-43d1-b3d6-da04d9082e24/resource/ecc2b827-1350-46bd-9615-2736223466c1/download/datos-sepe-para-datos-abiertos.csv
