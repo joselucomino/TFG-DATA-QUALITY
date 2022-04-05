@@ -7,3 +7,7 @@ A continuación se muestran todos los enlaces a los conjuntos de datos que se ha
 
 ### empleo
 · sepe.csv: https://datos.alcobendas.org/dataset/296094cc-d539-43d1-b3d6-da04d9082e24/resource/ecc2b827-1350-46bd-9615-2736223466c1/download/datos-sepe-para-datos-abiertos.csv
+
+### comercios
+· farmacias.csv: https://datos.alcobendas.org/dataset/c8ec5da2-4c1b-422e-baf6-218e97e2a1fd/resource/ca92d1b9-b602-44f6-b352-d497ad56f685/download/local-comercial-farmacias.csv
+
