@@ -11,3 +11,4 @@ A continuación se muestran todos los enlaces a los conjuntos de datos que se ha
 ### comercios
 · farmacias.csv: https://datos.alcobendas.org/dataset/c8ec5da2-4c1b-422e-baf6-218e97e2a1fd/resource/ca92d1b9-b602-44f6-b352-d497ad56f685/download/local-comercial-farmacias.csv
 
+· estancos.csv: https://datos.alcobendas.org/dataset/46b09d01-0ee3-410f-bcd2-8c0def9ddc35/resource/9634d236-73ca-4567-96d2-963795724871/download/local-comercial-estancos.csv
