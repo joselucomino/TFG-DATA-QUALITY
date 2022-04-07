@@ -1,0 +1,180 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "tipoActividadEconomica",
+    "newColumnName": "tipo_actividad_economica",
+    "description": "Rename column tipoActividadEconomica to tipo_actividad_economica"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "codigoCNAE",
+    "newColumnName": "codigo_CNAE",
+    "description": "Rename column codigoCNAE to codigo_CNAE"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "streetAddress",
+    "newColumnName": "street_address",
+    "description": "Rename column streetAddress to street_address"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "postalCode",
+    "newColumnName": "postal_code",
+    "description": "Rename column postalCode to postal_code"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "municipioId",
+    "newColumnName": "municipio_id",
+    "description": "Rename column municipioId to municipio_id"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "municipioTitle",
+    "newColumnName": "municipio_title",
+    "description": "Rename column municipioTitle to municipio_title"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "idAyuntamiento",
+    "newColumnName": "id_ayuntamiento",
+    "description": "Rename column idAyuntamiento to id_ayuntamiento"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "idComunidad",
+    "newColumnName": "id_comunidad",
+    "description": "Rename column idComunidad to id_comunidad"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "nombreTitular",
+    "newColumnName": "nombre_titular",
+    "description": "Rename column nombreTitular to nombre_titular"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "street_address",
+    "expression": "grel:substring(value,indexOf(value, \" \"))",
+    "onError": "set-to-blank",
+    "newColumnName": "nombre_via",
+    "columnInsertIndex": 5,
+    "description": "Create column nombre_via at index 5 based on column street_address using expression grel:substring(value,indexOf(value, \" \"))"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "nombre_via",
+    "expression": "grel:substring(value,lastIndexOf(value, \" \"))",
+    "onError": "set-to-blank",
+    "newColumnName": "numero_via",
+    "columnInsertIndex": 6,
+    "description": "Create column numero_via at index 6 based on column nombre_via using expression grel:substring(value,lastIndexOf(value, \" \"))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "nombre_via",
+    "expression": "grel:substring(value,0,lastIndexOf(value, \" \"))",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column nombre_via using expression grel:substring(value,0,lastIndexOf(value, \" \"))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "street_address",
+    "expression": "grel:value.split(\"\")[0]",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column street_address using expression grel:value.split(\"\")[0]"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "street_address",
+    "newColumnName": "tipo_via",
+    "description": "Rename column street_address to tipo_via"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "nombre_titular",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column nombre_titular by separator"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "nombre_titular 2",
+    "index": 18,
+    "description": "Move column nombre_titular 2 to position 18"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "nombre_titular 1",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": " ",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column nombre_titular 1 by separator"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "nombre_titular 2",
+    "index": 18,
+    "description": "Move column nombre_titular 2 to position 18"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "nombre_titular 2",
+    "index": 17,
+    "description": "Move column nombre_titular 2 to position 17"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "nombre_titular 2",
+    "newColumnName": "nombre_titular",
+    "description": "Rename column nombre_titular 2 to nombre_titular"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "nombre_titular 1 1",
+    "newColumnName": "apellido1_titular",
+    "description": "Rename column nombre_titular 1 1 to apellido1_titular"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "nombre_titular 1 2",
+    "newColumnName": "apellido2_titular",
+    "description": "Rename column nombre_titular 1 2 to apellido2_titular"
+  }
+]
